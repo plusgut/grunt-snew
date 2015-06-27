@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				if(target == 'templates') {
 					var template = grunt.file.read(file);
 					var parsedTemplate = tempart.parse(template);
-					var containerTemplate = 'vood.Template({' + file + ', ' + JSON.stringify( parsedTemplate ) + '});';
+					var containerTemplate = 'vood.Template("' + file + '", ' + JSON.stringify( parsedTemplate ) + ');';
 					container += containerTemplate + "\n";
 				} else {
 					container += grunt.file.read(file);
