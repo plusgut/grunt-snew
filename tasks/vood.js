@@ -10,14 +10,14 @@ module.exports = function(grunt) {
 				grunt.log.writeln('Working on: ' + file);
 
 				if(target == 'templates') {
-					var template = grunt.file.read(file);
+					var template = grunt.file.read(task.cwd + '/' + file);
 					var parsedTemplate = tempart.parse(template);
 					var path = file.split('/');
 					path.pop();
 					var containerTemplate = 'vood.Template("' + path.join('/') + '", ' + JSON.stringify( parsedTemplate ) + ');';
 					container += containerTemplate + "\n";
 				} else {
-					container += grunt.file.read(file);
+					container += grunt.file.read(task.cwd + '/' + file);
 				}
 			});
 
