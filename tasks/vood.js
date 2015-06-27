@@ -2,6 +2,14 @@ var tempart = require('tempart');
 
 module.exports = function(grunt) {
 	grunt.registerMultiTask('vood', 'Concatenate files.', function() {
+		var lib = this.options().lib;
+		if(lib) {
+			var vood = grunt.file.read(__dirname + '/../node_modules/vood/dist/vood.js');
+			grunt.file.write(lib, vood);
+		} else {
+			grunt.fail.warn('The options object should contain a lib property with the path to dest/vood.js');
+		}
+
 		// @TODO add sourcemap
 		var target = this.target;
 		var container = '';
