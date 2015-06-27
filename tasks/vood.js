@@ -7,17 +7,20 @@ module.exports = function(grunt) {
 		var container = '';
 		this.files.forEach(function(task) {
 			task.src.forEach(function(file) {
-				grunt.log.writeln('Working on: "' + file);
+				grunt.log.writeln('Working on: ' + file);
 
 				if(target == 'templates') {
 					var template = grunt.file.read(file);
 					var parsedTemplate = tempart.parse(template);
-					var containerTemplate = 'vood.Template("' + file + '", ' + JSON.stringify( parsedTemplate ) + ');';
+					var path = file.split('/');
+					path.pop();
+					var containerTemplate = 'vood.Template("' + path.join('/') + '", ' + JSON.stringify( parsedTemplate ) + ');';
 					container += containerTemplate + "\n";
 				} else {
 					container += grunt.file.read(file);
 				}
 			});
+
 			grunt.file.write(task.dest, container);
 		});
 
