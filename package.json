@@ -1,0 +1,28 @@
+{
+  "name": "grunt-vood",
+  "version": "0.1.0",
+  "description": "grunt for vood",
+  "main": "tasks/vood.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "vood": "^1.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plusgut/grunt-vood.git"
+  },
+  "keywords": [
+    "vood",
+    "grunt"
+  ],
+  "author": "Carlo Jeske",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plusgut/grunt-vood/issues"
+  },
+  "homepage": "https://github.com/plusgut/grunt-vood#readme"
+}
