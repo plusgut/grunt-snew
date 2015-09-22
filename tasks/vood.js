@@ -1,18 +1,18 @@
 var tempart = require('tempart');
 
 module.exports = function(grunt) {
-	grunt.registerMultiTask('vood', 'Concatenate files.', function() {
+	grunt.registerMultiTask('snew', 'Concatenate files.', function() {
 		var options = this.options();
 		if(options.lib) {
-			var vood = grunt.file.read(__dirname + '/../node_modules/vood/dist/vood.js');
-			grunt.file.write(options.lib, vood);
+			var snew = grunt.file.read(__dirname + '/../node_modules/snew/dist/snew.js');
+			grunt.file.write(options.lib, snew);
 		} else {
-			grunt.fail.warn('The options object should contain a lib property with the path to dest/vood.js');
+			grunt.fail.warn('The options object should contain a lib property with the path to dest/snew.js');
 		}
 
 		// @TODO add sourcemap
 		var target = this.target;
-		var container = "require(['vood/app'], function(vood) {window.vood = vood;\n";
+		var container = "require(['snew/app'], function(snew) {window.snew = snew;\n";
 		this.files.forEach(function(task) {
 			task.src.forEach(function(file) {
 				grunt.log.writeln('Working on: ' + file);
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 					var parsedTemplate = tempart.parse(template);
 					var path = file.split('/');
 					path.pop();
-					var containerTemplate = 'vood.Template("' + path.join('/') + '", ' + JSON.stringify( parsedTemplate ) + ');';
+					var containerTemplate = 'snew.Template("' + path.join('/') + '", ' + JSON.stringify( parsedTemplate ) + ');';
 					container += containerTemplate + "\n";
 				} else {
 					container += grunt.file.read(task.cwd + '/' + file);

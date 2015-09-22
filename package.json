@@ -1,13 +1,13 @@
 {
-  "name": "grunt-vood",
+  "name": "grunt-snew",
   "version": "0.1.0",
-  "description": "grunt for vood",
-  "main": "tasks/vood.js",
+  "description": "grunt for snew",
+  "main": "tasks/snew.js",
   "dependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.1",
     "tempart": "*",
-    "vood": "*"
+    "snew": "*"
   },
   "devDependencies": {
     "load-grunt-tasks": "^3.2.0"
@@ -17,16 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plusgut/grunt-vood.git"
+    "url": "git+https://github.com/plusgut/grunt-snew.git"
   },
   "keywords": [
-    "vood",
+    "snew",
     "grunt"
   ],
   "author": "Carlo Jeske",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/plusgut/grunt-vood/issues"
+    "url": "https://github.com/plusgut/grunt-snew/issues"
   },
-  "homepage": "https://github.com/plusgut/grunt-vood#readme"
+  "homepage": "https://github.com/plusgut/grunt-snew#readme"
 }

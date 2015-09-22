@@ -1,2 +1,2 @@
-# grunt-vood
-grunt for vood
+# grunt-snew
+grunt for snew
