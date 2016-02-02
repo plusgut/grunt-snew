@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
 		// @TODO add sourcemap
 		var target = this.target;
-		var container = "require(['snew/app'], function(snew) {window.snew = snew;\n";
+		var container = "";
 		this.files.forEach(function(task) {
 			task.src.forEach(function(file) {
 				grunt.log.writeln('Working on: ' + file);
@@ -39,8 +39,6 @@ module.exports = function(grunt) {
 			
 			
 		});
-
-		container += "\n});";
 
 		if(options.app) {
 			grunt.file.write(options.app, container);
